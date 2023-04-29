@@ -16,3 +16,9 @@ export const nameList = [
         last: 'Mahamud',
     },
 ]
+
+
+export const atFutureUserValueCome = {
+    name: 'taiseen',
+    email: 'test@email.com',
+}

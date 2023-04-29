@@ -27,8 +27,9 @@ use "interfaces" when building "libraries"
 |10 | with id prop `onClick`    | handleClickId: (id: number) => void |
 |11 | input type prop `onChange`| handleChange: (e: React`.Change`Event\<HTML`Input`Element>) =>     |
 |12 | inline css prop type      | style: React.CSSProperties    |
-|13 | useState type             | useState<null \| User>(null)  |
-|14 | useReducer type           | Discriminated Unions          |
+|13 | useState type             | useState<null \| User>(null) <-- value come at future |
+|14 | useReducer type           | Mother = Child1 \| Child2 <-- Discriminated Unions |
+|15 | createContext type        | ( { } as UserContextProps ) <-- Type Assertion |
 
 
 
