@@ -2,6 +2,7 @@ type ButtonProps = {
     handleClick: () => void
 }
 
+
 const Button = ({ handleClick }: ButtonProps) => {
 
     return (

@@ -2,6 +2,7 @@ type ButtonIDProps = {
     handleClickId: (id: number) => void
 }
 
+
 const ButtonID = ({ handleClickId }: ButtonIDProps) => {
 
     return (

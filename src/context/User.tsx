@@ -1,6 +1,12 @@
 import { atFutureUserValueCome } from "../constants/data";
 import { useUserContext } from "./UserContext";
 
+/*
+a context always has to be "created" [outside] the component
+& its future value will always be "set" [inside] a component
+
+so there is that gap that needs to be plugged by this Type Assertion ✅
+*/
 
 const User = () => {
 

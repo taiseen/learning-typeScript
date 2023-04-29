@@ -2,6 +2,7 @@ type ButtonEventProps = {
     handleClickEvent: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
+
 const ButtonEvent = ({ handleClickEvent }: ButtonEventProps) => {
 
     return (

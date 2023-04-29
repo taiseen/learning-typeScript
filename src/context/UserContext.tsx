@@ -24,6 +24,13 @@ type UserContextProviderProps = {
 //🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
 
 
+/*
+a context always has to be "created" [outside] the component
+& its future value will always be "set" [inside] a component
+
+so there is that gap that needs to be plugged by this Type Assertion ✅
+*/
+
 const UserContext = createContext({} as UserContextProps);  // <=== Type Assertion ✅
 
 

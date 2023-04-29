@@ -3,7 +3,6 @@ import { Button, ButtonEvent, ButtonID, Input } from '..'
 
 const Events = () => {
 
-
     const handleClick = () => console.log('handleClick');
 
     const handleClickEvent = (e: React.MouseEvent<HTMLButtonElement>) => console.log(e.target);

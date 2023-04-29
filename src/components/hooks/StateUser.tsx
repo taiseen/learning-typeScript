@@ -1,6 +1,8 @@
+import { atFutureUserValueCome } from '../../constants/data';
 import { useState } from 'react';
 
 
+// TypeScript type..........
 type User = {
     name: string;
     email: string;
@@ -15,13 +17,7 @@ const StateUser = () => {
     // const [user, setUser] = useState({} as User);    // <=== Type Assertion
 
 
-    const futureObjValueCome = {
-        name: 'taiseen',
-        email: 'test@email.com',
-    }
-
-
-    const handleLogIn = () => setUser(futureObjValueCome);
+    const handleLogIn = () => setUser(atFutureUserValueCome);
     const handleLogOut = () => setUser(null);
 
 

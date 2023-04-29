@@ -64,24 +64,20 @@ const CounterReducer = () => {
     return (
         <div className='border border-gray-600 flex justify-center items-center my-4'>
 
-            <button className='btn' onClick={() => dispatch({ type: DECREMENT, payload: 10 })}>
-                Decrement -10
+            <button className='btn-out' onClick={() => dispatch({ type: RESET })}>
+                Reset
             </button>
-
 
             <p className='text-2xl'>
                 Count : <span className='text-red-400'>{state.count}</span>
             </p>
 
+            <button className='btn-out' onClick={() => dispatch({ type: DECREMENT, payload: 10 })}>
+                Decrement -10
+            </button>
 
             <button className='btn' onClick={() => dispatch({ type: INCREMENT, payload: 10 })}>
                 Increment +10
-            </button>
-
-
-
-            <button className='btn text-red-500' onClick={() => dispatch({ type: RESET })}>
-                Reset
             </button>
 
         </div>
