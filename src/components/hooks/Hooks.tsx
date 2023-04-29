@@ -1,4 +1,4 @@
-import { State, StateUser } from ".."
+import { CounterReducer, State, StateUser } from ".."
 
 const Hooks = () => {
 
@@ -8,6 +8,8 @@ const Hooks = () => {
             <State />
 
             <StateUser />
+
+            <CounterReducer />
 
         </div>
     )
