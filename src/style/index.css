@@ -9,6 +9,10 @@
         @apply m-4 py-2 px-4 rounded cursor-pointer bg-green-300 hover:bg-green-400 duration-300
     }
 
+    .btn-out{
+        @apply m-4 py-2 px-4 rounded cursor-pointer bg-red-300 hover:bg-red-400 duration-300
+    }
+
     .inputText{
         @apply border border-red-300 outline-none py-1 px-2
     }

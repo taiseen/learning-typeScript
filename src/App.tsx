@@ -1,4 +1,4 @@
-import { Basic, Events } from "./components";
+import { Basic, Events, Hooks } from "./components";
 
 
 const App = () => {
@@ -11,6 +11,9 @@ const App = () => {
 
       {/* event props type */}
       <Events />
+
+      {/* hook props type */}
+      <Hooks />
 
     </div>
   )
