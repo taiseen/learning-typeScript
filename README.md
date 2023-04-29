@@ -11,6 +11,14 @@ use "interfaces" when building "libraries"
 ```
 
 ## Learning Context:- 
-* primitive type
-* object type
-* array type || array of objects type
+|No| Context                  | Short Form              |
+|--|--------------------------|-------------------------|
+|1 | primitive type           | string, number, boolean |
+|2 | object type              | { }                     |
+|3 | array type \| array of objects type  | { }[ ]      |
+|4 | union of string literal types <br/> (not allow any random strings...) | 'loading' \| 'error' \| 'success' |
+|5 | children prop           | children: string        |
+|6 | children prop <br> when its React Component  | children: `React.ReactNode`      |
+|7 | optional prop type      | extraSubject`?`: string   |
+
+
