@@ -1,5 +1,5 @@
-import { Greet, Heading, Oscar, Person, PersonList, Status, Style, Subject } from ".";
-import { nameList } from "../constants/data";
+import { Greet, Heading, Oscar, Person, PersonList, Status, Style, Subject } from "..";
+import { nameList } from "../../constants/data";
 
 
 const Basic = () => {

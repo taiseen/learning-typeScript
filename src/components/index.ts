@@ -1,12 +1,12 @@
-export { default as PersonList } from './PersonList';
-export { default as Subject } from './Subject';
-export { default as Heading } from './Heading';
-export { default as Person } from './Person';
-export { default as Status } from './Status';
-export { default as Greet } from './Greet';
-export { default as Oscar } from './Oscar';
-export { default as Style } from './Style';
-export { default as Basic } from './Basic';
+export { default as PersonList } from './basic/PersonList';
+export { default as Subject } from './basic/Subject';
+export { default as Heading } from './basic/Heading';
+export { default as Person } from './basic/Person';
+export { default as Status } from './basic/Status';
+export { default as Greet } from './basic/Greet';
+export { default as Oscar } from './basic/Oscar';
+export { default as Style } from './basic/Style';
+export { default as Basic } from './basic/Basic';
 
 export { default as ButtonEvent } from './event/ButtonEvent';
 export { default as ButtonID } from './event/ButtonID';

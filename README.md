@@ -18,12 +18,12 @@ use "interfaces" when building "libraries"
 |1 | primitive type             | string, number, boolean |
 |2 | object type                | { }                     |
 |3 | array type \| array of objects type  | { }[ ]        |
-|4 | union of string literal types <br/> (not allow any random strings...) | 'loading' \| 'error' \| 'success' |
+|4 | union of string literal types - <br/> not allow any random string | 'loading' \| 'error' \| 'success' |
 |5 | children prop              | children: string        |
 |6 | children prop <br> when its React Component  | children: React`.ReactNode` |
 |7 | optional prop type         | extraSubject`?`: string   |
 |8 | empty event prop `onClick` | handleClick: () => void   |
-|9 | with event prop `onClick`  | handleClickEvent: (e: React`.Mouse`Event\<HTML`Button`Element>) => void |
+|9 | with event prop `onClick`  | handleClickEvent: (e: React`.Mouse`Event\<HTML`Button`Element>) => |
 |10 | with id prop `onClick`    | handleClickId: (id: number) => void |
 |11 | input type prop `onChange`| handleChange: (e: React`.Change`Event\<HTML`Input`Element>) => void |
 |12 | inline css prop type      | style: React.CSSProperties|
