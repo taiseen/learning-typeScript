@@ -3,6 +3,9 @@
 * yarn create vite --template react-ts PROJECT_NAME
 * yarn add -D tailwindcss postcss autoprefixer
 * npx tailwindcss init -p
+* yarn add -D @types/node
+* yarn add -D ts-node-dev
+
 
 
 ```
