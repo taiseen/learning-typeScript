@@ -12,7 +12,6 @@ const dataI = [10, 20, 30];
 const dataJ = ['AA', 'BB', 'CC'];
 const dataK = [true, false];
 const dataL = [{ name: 'Tom' }, { name: 'Don' }];
-;
 const dataM = ['Sam', 25];
 const dataN = ['AA', true];
 const dataO = [0, false];

@@ -9,7 +9,7 @@ const userInfoD = {
     address: { country: 'India' },
     isMarried: { status: true },
 };
-console.log(userInfoA);
-console.log(userInfoB);
-console.log(userInfoC);
-console.log(userInfoD);
+// console.log(userInfoA);
+// console.log(userInfoB);
+// console.log(userInfoC);
+// console.log(userInfoD);

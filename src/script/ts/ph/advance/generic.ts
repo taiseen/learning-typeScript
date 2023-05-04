@@ -83,8 +83,8 @@ const dataL: GenericArrayType<dataLType> = [{ name: 'Tom' }, { name: 'Don' }];
 
 type GenericTupleArray<T, U> = [T, U];
 
-type dataPType = { name: string };
-interface IDataPType { name: string };
+// type dataPType = { name: string };
+interface IDataPType { name: string }
 
 const dataM: GenericTupleArray<string, number> = ['Sam', 25];
 const dataN: GenericTupleArray<string, boolean> = ['AA', true];
