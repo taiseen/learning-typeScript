@@ -5,8 +5,15 @@
 * npx tailwindcss init -p
 * yarn add -D @types/node
 * yarn add -D ts-node-dev
-* nvm install 18.16.0
-* nvm use 18.16.0 [run as administrator at cmd]
+
+
+```
+nvm list
+
+nvm install 18.16.0
+
+nvm use 18.16.0 [run as administrator at cmd]
+```
 
 
 ```
