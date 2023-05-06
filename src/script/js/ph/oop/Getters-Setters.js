@@ -13,10 +13,16 @@ class BankAccount2 {
     get balance() {
         return this._balance;
     }
+    get amount() {
+        return this.getAmount();
+    }
     set deposit(amount) {
         this._balance += amount;
     }
     // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    getAmount() {
+        return this._balance;
+    }
     getBalance() {
         return 'Current Balance: ' + this._balance.toLocaleString();
     }
@@ -34,3 +40,4 @@ console.log(account2.balance);
 account2.deposit = 10000;
 console.log(account2);
 console.log(account2.getBalance());
+console.log(account2.amount);

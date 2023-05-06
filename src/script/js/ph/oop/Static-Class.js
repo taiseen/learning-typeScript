@@ -1,5 +1,5 @@
 "use strict";
-// 05 - May - 2023
+// 06 - May - 2023
 class Counter1 {
     constructor(counter) {
         this.counter = counter;
@@ -23,14 +23,15 @@ const inc2 = new Counter1(0); // create different memory location...
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 class Counter2 {
     static increment() {
-        return Counter2.counter += 5;
+        return Counter2.counter += 4;
     }
     static decrement() {
-        return Counter2.counter -= 1;
+        return Counter2.counter -= 2;
     }
 }
 Counter2.counter = 0;
+// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 console.log(Counter2.counter);
-console.log(Counter2.increment());
-console.log(Counter2.decrement());
+console.log(Counter2.increment()); // point at one memory location...
+console.log(Counter2.decrement()); // point at one memory location...
 console.log(Counter2.counter);

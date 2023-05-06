@@ -1,4 +1,4 @@
-// 05 - May - 2023
+// 06 - May - 2023
 
 class Counter1 {
     constructor(public counter: number) { /* ..... */ }
@@ -40,6 +40,8 @@ class Counter2 {
         return Counter2.counter -= 2;
     }
 }
+
+// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
 console.log(Counter2.counter);
 console.log(Counter2.increment()); // point at one memory location...

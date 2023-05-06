@@ -18,21 +18,29 @@ class BankAccount2 {
     // no function calling approach...
     // access or assign like normal property...
 
-    get balance(): number {
-        return this._balance;
+    get balance(): number {         // <== 🟢🟢🟢 Encapsulation
+        return this._balance;       
     }
 
-    set deposit(amount: number) {
+    get amount(): number {          // <== 🟢🟢🟢 Encapsulation
+        return this.getAmount()
+    }
+
+    set deposit(amount: number) {   // <== 🟢🟢🟢 Encapsulation
         this._balance += amount;
     }
 
     // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-    getBalance(): string {
+    private getAmount(): number {           // <== 🟢🟢🟢 Encapsulation
+        return this._balance;
+    }
+
+    getBalance(): string {                  // <== 🟢🟢🟢 Encapsulation
         return 'Current Balance: ' + this._balance.toLocaleString();
     }
 
-    addBalance(balance: number): void {
+    addBalance(balance: number): void {     // <== 🟢🟢🟢 Encapsulation
         this._balance += balance;
     }
 }
@@ -53,3 +61,5 @@ account2.deposit = 10_000
 
 console.log(account2);
 console.log(account2.getBalance());
+
+console.log(account2.amount);

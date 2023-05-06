@@ -40,7 +40,7 @@ const guestUser: gustUserType = { name: 'Zon' }
 const adminUser: adminUserType = { name: 'Sam', role: 'admin' }
 
 function getUser(user: userType) {
-    if ('role' in user) { // 🟥🟥🟥 <== using 'in' operator...
+    if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
         return `${user.name} is ${user.role} user`
     } else {
         return `${user.name} is guest user`

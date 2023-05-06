@@ -13,7 +13,7 @@ console.log(addData('1', '5'));
 const guestUser = { name: 'Zon' };
 const adminUser = { name: 'Sam', role: 'admin' };
 function getUser(user) {
-    if ('role' in user) { // 🟥🟥🟥 <== using 'in' operator...
+    if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
         return `${user.name} is ${user.role} user`;
     }
     else {
