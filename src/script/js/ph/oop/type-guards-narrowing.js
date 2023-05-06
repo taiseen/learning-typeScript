@@ -1,103 +1,116 @@
 "use strict";
 // 05 - May - 2023
-const addData = (a, b) => {
-    if (typeof a === "number" && typeof b === "number") {
-        return a + b;
-    }
-    else {
-        return a.toString() + b.toString();
-    }
-};
-console.log(addData(1, 1));
-console.log(addData('1', '5'));
-const guestUser = { name: 'Zon' };
-const adminUser = { name: 'Sam', role: 'admin' };
-function getUser(user) {
-    if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
-        return `${user.name} is ${user.role} user`;
-    }
-    else {
-        return `${user.name} is guest user`;
-    }
-}
-console.log(getUser(adminUser));
-console.log(getUser(guestUser));
+// Type Guards, also known as Type Narrowing
+// TS allow you to narrow down the type of a variable
+// [typeof] type guards       : checking the type of a =variable=
+// [instanceof] type guards   : checking if a variable is an instance of a specific {class}
+// [in] type guards           : checking if a property or method exists on an {object}
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-// 🔴🔴🔴 instance of gard 🔴🔴🔴
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-// gard ==> class & object...
-class Animal1 {
-    constructor(name, color) {
-        this.name = name;
-        this.color = color;
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+// 🔴🔴🔴 key-of gard 🔴🔴🔴
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+(() => {
+    const addData = (a, b) => {
+        if (typeof a === "number" && typeof b === "number") {
+            return a + b;
+        }
+        else {
+            return a.toString() + b.toString();
+        }
+    };
+    console.log(addData(1, 1));
+    console.log(addData('1', '5'));
+    const guest = { name: 'Zon' };
+    const admin = { name: 'Sam', role: 'admin' };
+    function getUser(user) {
+        if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
+            return `${user.name} is ${user.role} user`;
+        }
+        else {
+            return `${user.name} is guest user`;
+        }
     }
-    defaultSound() {
-        console.log('Default Sound');
+    console.log(getUser(admin));
+    console.log(getUser(guest));
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // 🔴🔴🔴 instance of gard 🔴🔴🔴
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // gard ==> class & object...
+    class Animal {
+        constructor(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+        defaultSound() {
+            console.log('Default Sound');
+        }
     }
-}
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-class Cat1 extends Animal1 {
-    constructor(name, color) {
-        super(name, color);
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    class Cat extends Animal {
+        constructor(name, color) {
+            super(name, color);
+        }
+        catSound() {
+            console.log('Cat sound...');
+        }
     }
-    catSound() {
-        console.log('Cat sound...');
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    class Dog extends Animal {
+        constructor(name, color) {
+            super(name, color);
+        }
+        dogSound() {
+            console.log('Dog sound...');
+        }
     }
-}
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-class Dog1 extends Animal1 {
-    constructor(name, color) {
-        super(name, color);
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    const cat = new Cat('Neo', 'Drown');
+    const dog = new Dog('Tom', 'Gray');
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // approach ==> 1 | using 'instanceof' operator...
+    function playSound1(animal) {
+        if (animal instanceof Cat) {
+            animal.catSound();
+        }
+        else if (animal instanceof Dog) {
+            animal.dogSound();
+        }
+        else {
+            animal.defaultSound();
+        }
     }
-    dogSound() {
-        console.log('Dog sound...');
+    // playSound1(cat1)
+    // playSound1(cat1)
+    // playSound1(dog1)
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // approach ==> 2 | using 'instanceof' + 'is' operator...
+    function isDog(animal) {
+        return animal instanceof Dog;
     }
-}
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-const cat1 = new Cat1('Neo', 'Drown');
-const dog1 = new Dog1('Tom', 'Gray');
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// approach ==> 1 | using 'instanceof' operator...
-function playSound1(animal) {
-    if (animal instanceof Cat1) {
-        animal.catSound();
+    function isCat(animal) {
+        return animal instanceof Cat;
     }
-    else if (animal instanceof Dog1) {
-        animal.dogSound();
+    function playSound2(animal) {
+        if (isCat(animal)) {
+            animal.catSound();
+        }
+        else if (isDog(animal)) {
+            animal.dogSound();
+        }
+        else {
+            animal.defaultSound();
+        }
     }
-    else {
-        animal.defaultSound();
-    }
-}
-// playSound1(cat1)
-// playSound1(cat1)
-// playSound1(dog1)
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// approach ==> 2 | using 'instanceof' + 'is' operator...
-function isDog(animal) {
-    return animal instanceof Dog1;
-}
-function isCat(animal) {
-    return animal instanceof Cat1;
-}
-function playSound2(animal) {
-    if (isCat(animal)) {
-        animal.catSound();
-    }
-    else if (isDog(animal)) {
-        animal.dogSound();
-    }
-    else {
-        animal.defaultSound();
-    }
-}
-playSound2(dog1);
-playSound2(cat1);
-playSound2(dog1);
+    playSound2(dog);
+    playSound2(cat);
+    playSound2(dog);
+})();

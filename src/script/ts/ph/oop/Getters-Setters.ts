@@ -2,7 +2,7 @@
 
 // Getters and Setters
 
-class BankAccount2 {
+class BankAccount {
     public readonly id: string;
     public readonly name: string;
     private _balance: number;
@@ -47,19 +47,19 @@ class BankAccount2 {
 
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-const account2 = new BankAccount2('504', 'Kem', 75_000);
+const account = new BankAccount('504', 'Kem', 75_000);
 
-console.log(account2);
-console.log(account2.getBalance());
+console.log(account);
+console.log(account.getBalance());
 
-account2.addBalance(20_000);
+account.addBalance(20_000);
 
-console.log(account2);
-console.log(account2.balance);
+console.log(account);
+console.log(account.balance);
 
-account2.deposit = 10_000
+account.deposit = 10_000
 
-console.log(account2);
-console.log(account2.getBalance());
+console.log(account);
+console.log(account.getBalance());
 
-console.log(account2.amount);
+console.log(account.amount);

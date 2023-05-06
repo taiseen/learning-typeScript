@@ -1,6 +1,13 @@
 // 05 - May - 2023
 
-// Type Guards / Type Narrowing
+// Type Guards, also known as Type Narrowing
+
+// TS allow you to narrow down the type of a variable
+
+// [typeof] type guards       : checking the type of a =variable=
+// [instanceof] type guards   : checking if a variable is an instance of a specific {class}
+// [in] type guards           : checking if a property or method exists on an {object}
+
 
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
@@ -10,133 +17,135 @@
 // 🔴🔴🔴 key-of gard 🔴🔴🔴
 // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
 
-type AlphaNumeric = string | number;
+(() => {
+    type AlphaNumeric = string | number;
 
-const addData = (a: AlphaNumeric, b: AlphaNumeric): AlphaNumeric => {
+    const addData = (a: AlphaNumeric, b: AlphaNumeric): AlphaNumeric => {
 
-    if (typeof a === "number" && typeof b === "number") {
-        return a + b;
-    } else {
-        return a.toString() + b.toString()
+        if (typeof a === "number" && typeof b === "number") {
+            return a + b;
+        } else {
+            return a.toString() + b.toString()
+        }
     }
-}
 
-console.log(addData(1, 1));
-console.log(addData('1', '5'));
+    console.log(addData(1, 1));
+    console.log(addData('1', '5'));
 
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-// 🔴🔴🔴 in gard  🔴🔴🔴
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // 🔴🔴🔴 in gard  🔴🔴🔴
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
 
-type gustUserType = { name: string }
-type adminUserType = { name: string, role: 'admin' }
-type userType = adminUserType | gustUserType
+    type gustType = { name: string }
+    type adminType = { name: string, role: 'admin' }
+    type userType = adminType | gustType
 
-const guestUser: gustUserType = { name: 'Zon' }
-const adminUser: adminUserType = { name: 'Sam', role: 'admin' }
+    const guest: gustType = { name: 'Zon' }
+    const admin: adminType = { name: 'Sam', role: 'admin' }
 
-function getUser(user: userType) {
-    if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
-        return `${user.name} is ${user.role} user`
-    } else {
-        return `${user.name} is guest user`
+    function getUser(user: userType) {
+        if ('role' in user) { // 🟢🟢🟢 <== using 'in' operator...
+            return `${user.name} is ${user.role} user`
+        } else {
+            return `${user.name} is guest user`
+        }
     }
-}
 
-console.log(getUser(adminUser));
-console.log(getUser(guestUser));
+    console.log(getUser(admin));
+    console.log(getUser(guest));
 
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-// 🔴🔴🔴 instance of gard 🔴🔴🔴
-// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
-// gard ==> class & object...
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // 🔴🔴🔴 instance of gard 🔴🔴🔴
+    // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+    // gard ==> class & object...
 
-class Animal1 {
-    constructor(public name: string, public color: string) { }
-    defaultSound() {
-        console.log('Default Sound');
+    class Animal {
+        constructor(public name: string, public color: string) { }
+        defaultSound() {
+            console.log('Default Sound');
+        }
     }
-}
 
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-class Cat1 extends Animal1 {
-    constructor(name: string, color: string) {
-        super(name, color);
+    class Cat extends Animal {
+        constructor(name: string, color: string) {
+            super(name, color);
+        }
+        catSound() {
+            console.log('Cat sound...');
+        }
     }
-    catSound() {
-        console.log('Cat sound...');
+
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+
+    class Dog extends Animal {
+        constructor(name: string, color: string) {
+            super(name, color);
+        }
+        dogSound() {
+            console.log('Dog sound...');
+        }
     }
-}
 
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 
-class Dog1 extends Animal1 {
-    constructor(name: string, color: string) {
-        super(name, color);
+    const cat = new Cat('Neo', 'Drown');
+    const dog = new Dog('Tom', 'Gray');
+
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+
+    // approach ==> 1 | using 'instanceof' operator...
+
+    function playSound1(animal: Animal) {
+        if (animal instanceof Cat) {
+            animal.catSound();
+        } else if (animal instanceof Dog) {
+            animal.dogSound();
+        } else {
+            animal.defaultSound();
+        }
     }
-    dogSound() {
-        console.log('Dog sound...');
+
+    // playSound1(cat1)
+    // playSound1(cat1)
+    // playSound1(dog1)
+
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+    // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
+
+    // approach ==> 2 | using 'instanceof' + 'is' operator...
+
+    function isDog(animal: Animal): animal is Dog {
+        return animal instanceof Dog;
     }
-}
 
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-
-const cat1 = new Cat1('Neo', 'Drown');
-const dog1 = new Dog1('Tom', 'Gray');
-
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-
-// approach ==> 1 | using 'instanceof' operator...
-
-function playSound1(animal: Animal1) {
-    if (animal instanceof Cat1) {
-        animal.catSound();
-    } else if (animal instanceof Dog1) {
-        animal.dogSound();
-    } else {
-        animal.defaultSound();
+    function isCat(animal: Animal): animal is Cat {
+        return animal instanceof Cat;
     }
-}
 
-// playSound1(cat1)
-// playSound1(cat1)
-// playSound1(dog1)
-
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-// 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-
-// approach ==> 2 | using 'instanceof' + 'is' operator...
-
-function isDog(animal: Animal1): animal is Dog1 {
-    return animal instanceof Dog1;
-}
-
-function isCat(animal: Animal1): animal is Cat1 {
-    return animal instanceof Cat1;
-}
-
-function playSound2(animal: Animal1) {
-    if (isCat(animal)) {
-        animal.catSound();
-    } else if (isDog(animal)) {
-        animal.dogSound();
-    } else {
-        animal.defaultSound();
+    function playSound2(animal: Animal) {
+        if (isCat(animal)) {
+            animal.catSound();
+        } else if (isDog(animal)) {
+            animal.dogSound();
+        } else {
+            animal.defaultSound();
+        }
     }
-}
 
-playSound2(dog1)
-playSound2(cat1)
-playSound2(dog1)
+    playSound2(dog)
+    playSound2(cat)
+    playSound2(dog)
+})()

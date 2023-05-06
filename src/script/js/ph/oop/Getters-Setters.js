@@ -1,7 +1,7 @@
 "use strict";
 // 05 - May - 2023
 // Getters and Setters
-class BankAccount2 {
+class BankAccount {
     constructor(id, name, balance) {
         this.id = id;
         this.name = name;
@@ -31,13 +31,13 @@ class BankAccount2 {
     }
 }
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-const account2 = new BankAccount2('504', 'Kem', 75000);
-console.log(account2);
-console.log(account2.getBalance());
-account2.addBalance(20000);
-console.log(account2);
-console.log(account2.balance);
-account2.deposit = 10000;
-console.log(account2);
-console.log(account2.getBalance());
-console.log(account2.amount);
+const account = new BankAccount('504', 'Kem', 75000);
+console.log(account);
+console.log(account.getBalance());
+account.addBalance(20000);
+console.log(account);
+console.log(account.balance);
+account.deposit = 10000;
+console.log(account);
+console.log(account.getBalance());
+console.log(account.amount);
