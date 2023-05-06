@@ -1,10 +1,29 @@
 "use strict";
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+// 🔴🔴🔴 Normal Function 🔴🔴🔴
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+// function addJS(a, b) {
+//     return a + b
+// }
 function add(a, b) {
     return a + b;
 }
 console.log(add(2, 2));
-const addNumbers = (a, b) => a + b;
-console.log(addNumbers(20, 20));
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+// 🔴🔴🔴 Arrow Function🔴🔴🔴
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+// const addNumbersJS = (a, b) => a + b;
+// without type alias...
+const addNumbersNormal = (a, b) => a + b;
+console.log(addNumbersNormal(20, 20));
+const addNumbersWithType = (a, b) => a + b;
+console.log(addNumbersWithType(40, 40));
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+// 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
 const arr = [1, 2, 3, 4, 5];
 console.log(arr.map((num) => num * 2));
 const personInfo = {
@@ -14,5 +33,5 @@ const personInfo = {
         return `Total mark is : ${this.marks + mark}`;
     },
 };
-console.log(personInfo.getMarks(25));
 console.log(personInfo);
+console.log(personInfo.getMarks(25));
