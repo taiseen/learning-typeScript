@@ -13,6 +13,8 @@
 // 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
 (() => {
     const addData = (a, b) => {
+        // this approach is called ==> type Narrowing... 
+        // by using "typeof" operator we achieve type Narrowing effect
         if (typeof a === "number" && typeof b === "number") {
             return a + b;
         }

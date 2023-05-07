@@ -22,10 +22,10 @@ const user_With_Extend_Interface = {
     role: 'Student'
 };
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-console.log(user_With_Type);
-console.log(user_With_Type_Union);
-console.log(user_With_Interface);
-console.log(user_With_Extend_Interface);
+// console.log(user_With_Type);
+// console.log(user_With_Type_Union);
+// console.log(user_With_Interface);
+// console.log(user_With_Extend_Interface);
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
@@ -36,10 +36,21 @@ console.log(user_With_Extend_Interface);
 const addNumber = (a, b) => a + b;
 const addNumberA = (a, b) => a + b;
 const addNumberB = (a, b) => a + b;
-console.log(addNumber(1, 1));
-console.log(addNumberA(2, 2));
-console.log(addNumberB(5, 5));
+const userLogin = {
+    name: 'Xen',
+    pass: '123',
+    type: 'admin',
+    login: (username, password) => {
+        console.log('User login info:-', { username }, { password });
+        // return `User login info:- {username: ${username}} {password: ${password}}`;
+    },
+    isAdmin(type) {
+        return type === 'admin' ? true : false;
+    }
+};
+console.log(userLogin);
+console.log(userLogin.isAdmin(userLogin.type));
+userLogin.login(userLogin.name, userLogin.pass);
 const rollNumbersA = [1, 3, 5];
-console.log(rollNumbersA);
 const rollNumbersB = [2, 4, 6];
-console.log(rollNumbersB);
+// console.log(rollNumbersB);
