@@ -3,6 +3,9 @@
 // Access Modifiers: Public, Private, (Protected)
 (() => {
     class BankAccount {
+        id;
+        name;
+        _balance;
         constructor(id, name, balance) {
             this.id = id;
             this.name = name;
@@ -16,7 +19,7 @@
         }
     }
     // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-    const account = new BankAccount('101', 'Jon', 4000);
+    const account = new BankAccount('101', 'Jon', 4_000);
     console.log(account);
     account.getBalance();
     account.addBalance(500);

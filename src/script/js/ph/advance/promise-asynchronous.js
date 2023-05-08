@@ -1,14 +1,5 @@
 "use strict";
 // 05 - May - 2023
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 // Promise Asynchronous 
 const makePromiseString = () => {
     return new Promise((resolve, reject) => {
@@ -18,25 +9,25 @@ const makePromiseString = () => {
             : reject('error: at data fetching time...');
     });
 };
-const getString = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield makePromiseString();
+const getString = async () => {
+    const data = await makePromiseString();
     console.log(data);
-});
+};
 getString();
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 const makePromiseNumber = () => {
     return new Promise((resolve, reject) => {
-        const data = 1000000;
+        const data = 10_00_000;
         data
             ? resolve(data)
             : reject('error: at data fetching time...');
     });
 };
-const getNumber = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield makePromiseNumber();
+const getNumber = async () => {
+    const data = await makePromiseNumber();
     console.log(data);
-});
+};
 getNumber();
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
@@ -48,10 +39,10 @@ const makePromiseBoolean = () => {
             : reject('error: at data fetching time...');
     });
 };
-const getBoolean = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield makePromiseBoolean();
+const getBoolean = async () => {
+    const data = await makePromiseBoolean();
     console.log(data);
-});
+};
 getBoolean();
 const makePromiseObject = () => {
     return new Promise((resolve, reject) => {
@@ -61,18 +52,18 @@ const makePromiseObject = () => {
             : reject(new Error('error: at data fetching time...'));
     });
 };
-const getObject = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield makePromiseObject();
+const getObject = async () => {
+    const data = await makePromiseObject();
     console.log(data);
-});
+};
 getObject();
-const getDataFormJsonPlaceHolder = () => __awaiter(void 0, void 0, void 0, function* () {
+const getDataFormJsonPlaceHolder = async () => {
     // 🔴 node v-18.16.0 "fetch" support by default... 🔴
-    const response = yield fetch('https://jsonplaceholder.typicode.com/todos/1');
-    return yield response.json();
-});
-const getData = () => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield getDataFormJsonPlaceHolder();
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    return await response.json();
+};
+const getData = async () => {
+    const data = await getDataFormJsonPlaceHolder();
     console.log(data);
-});
+};
 getData();

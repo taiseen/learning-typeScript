@@ -15,9 +15,9 @@ const compareArrays = (arr1, arr2) => {
     return arr1.filter(num => arr2.includes(num));
 };
 const products = [
-    { id: 101, name: 'Apple', price: 40000, category: 'Phone' },
-    { id: 102, name: 'Lenovo', price: 80000, category: 'Laptop' },
-    { id: 103, name: 'Samsung', price: 30000, category: 'Phone' },
+    { id: 101, name: 'Apple', price: 40_000, category: 'Phone' },
+    { id: 102, name: 'Lenovo', price: 80_000, category: 'Laptop' },
+    { id: 103, name: 'Samsung', price: 30_000, category: 'Phone' },
 ];
 // Write a TypeScript generic function that takes this array, a criterion, and returns a new array 
 // containing only the products that match the given criterion and value. 
@@ -28,9 +28,9 @@ products, criterion, value) => {
 };
 const filteredProducts = filterProducts(products, 'category', 'Phone');
 const productPhone = [
-    ['OnePlus-7T', 60000, 5],
-    ['Samsung-A5', 30000, 8],
-    ['IPhone-Pro', 90000, 2],
+    ['OnePlus-7T', 60_000, 5],
+    ['Samsung-A5', 30_000, 8],
+    ['IPhone-Pro', 90_000, 2],
 ];
 const productBook = [
     ['Deep Work', 250, 6],

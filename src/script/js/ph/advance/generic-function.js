@@ -41,7 +41,7 @@ function funO(dataA, dataB) {
 }
 const f5 = funT('Ken', 27);
 const f6 = funT(0, false);
-const f7 = funT('Canada', [250000]);
+const f7 = funT('Canada', [2_50_000]);
 const f8 = funT(101, [{ name: 'Leo' }]);
 const f9 = funT({ name: 'Zoe' }, 28);
 const userInfo = {
@@ -51,7 +51,7 @@ const userInfo = {
 // const userInfoWithID = (data: IUser) => {
 const userInfoWithID = (data) => {
     const id = '101';
-    const userData = Object.assign({ id }, data);
+    const userData = { id, ...data };
     return userData;
 };
 const userA = userInfoWithID(userInfo);

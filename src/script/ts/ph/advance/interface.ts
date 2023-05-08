@@ -95,7 +95,7 @@ const addNumberB: IAddNumberType = (a, b) => a + b;
 // console.log(addNumberB(5, 5));
 
 
-type UserType = 'admin' | 'user';
+type UserType = 'admin' | 'user';                                   // literal types with union operator
 // type IsAdminFun = ;                                              // 🟢 normal (){} function
 // type LoginFun = (username: string, password: string) => void;    // 🟢 arrow =()=>{} function
 

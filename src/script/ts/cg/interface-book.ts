@@ -1,9 +1,13 @@
-// 07 - May - 2023
-// interface - Book Example 
+/*
+    07 - May - 2023
+    Typescript in Hindi | Crash Course | Coders Gyan
+    https://youtu.be/F5pjG-sP0c8
+*/
 
+// interface - Book Example 
 // interface can - 
 // 1) extends
-// 2) marge
+// 2) marge - if have same name...
 
 (() => {
 
@@ -56,9 +60,9 @@
         duration: 2,
     }
 
-    // console.log(book1);
-    // console.log(book2);
-    // console.log(book3);
+    console.log(book1);
+    console.log(book2);
+    console.log(book3);
 
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩

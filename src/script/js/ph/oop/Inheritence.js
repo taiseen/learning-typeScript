@@ -1,6 +1,9 @@
 "use strict";
 // 05 - May - 2023
 class Human {
+    name;
+    age;
+    address;
     // public name: string;
     // public age: number;
     // public address: string;
@@ -30,6 +33,7 @@ student.sleeping(7);
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 class Teacher extends Human {
+    designation;
     // public designation: string;
     constructor(name, age, address, designation) {
         super(name, age, address);

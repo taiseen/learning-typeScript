@@ -2,6 +2,9 @@
 // 05 - May - 2023
 // Getters and Setters
 class BankAccount {
+    id;
+    name;
+    _balance;
     constructor(id, name, balance) {
         this.id = id;
         this.name = name;
@@ -31,13 +34,13 @@ class BankAccount {
     }
 }
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
-const account = new BankAccount('504', 'Kem', 75000);
+const account = new BankAccount('504', 'Kem', 75_000);
 console.log(account);
 console.log(account.getBalance());
-account.addBalance(20000);
+account.addBalance(20_000);
 console.log(account);
 console.log(account.balance);
-account.deposit = 10000;
+account.deposit = 10_000;
 console.log(account);
 console.log(account.getBalance());
 console.log(account.amount);

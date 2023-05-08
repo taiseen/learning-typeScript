@@ -41,6 +41,7 @@
         }
     }
     class Circle extends Shape {
+        radius;
         constructor(radius) {
             super();
             this.radius = radius;
@@ -51,6 +52,8 @@
         }
     }
     class Rectangle extends Shape {
+        height;
+        weight;
         constructor(height, weight) {
             super();
             this.height = height;

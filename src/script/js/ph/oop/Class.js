@@ -1,6 +1,9 @@
 "use strict";
 // 05 - May - 2023
 class Animal {
+    name;
+    specie;
+    sound;
     // public name: string
     // public specie: string
     // public sound: string

@@ -1,9 +1,13 @@
 "use strict";
-// 07 - May - 2023
+/*
+    07 - May - 2023
+    Typescript in Hindi | Crash Course | Coders Gyan
+    https://youtu.be/F5pjG-sP0c8
+*/
 // interface - Book Example 
 // interface can - 
 // 1) extends
-// 2) marge
+// 2) marge - if have same name...
 (() => {
     // when interface's have same name then TS going to marge them together & create 1
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
@@ -26,9 +30,9 @@
         fileSize: 25,
         duration: 2,
     };
-    // console.log(book1);
-    // console.log(book2);
-    // console.log(book3);
+    console.log(book1);
+    console.log(book2);
+    console.log(book3);
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩

@@ -15,6 +15,25 @@ nvm install 18.16.0
 nvm use 18.16.0 [run as administrator at cmd]
 ```
 
+```
+for command-line typeScript file compiling type --> tsc
+```
+
+```
+NOTE:- if you run normal typeScript file at command-line by [node fileName.js] then...
+at "tsconfig.json" file set...
+
+🟥 "watch" : true,
+
+so this option always watch - our souse code, when we save the file every time...
+& that will just recompile our [.ts] source code file into [.js] file...
+
+
+🟥 "target": "es2016" ==> to ==> 
+🟥 "target": "esnext"
+
+for async/await native support...
+```
 
 ```
 use "types" when building "applications" & 

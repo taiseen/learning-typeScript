@@ -17,7 +17,7 @@ const userData3 = {
 };
 const userWithId = (data) => {
     const id = '101';
-    const userData = Object.assign({ id }, data);
+    const userData = { id, ...data };
     return userData;
 };
 const u1 = userWithId(userData1);

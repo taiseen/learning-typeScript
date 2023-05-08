@@ -4,7 +4,6 @@
     https://youtu.be/F5pjG-sP0c8
 */
 
-
 (() => {
 
     // we can call this interface also "contract" 🤝 for an object...
@@ -15,45 +14,66 @@
     }
 
     interface IBankAccount {
-        id: number;
-        holder: string;
+        readonly id: number;
+        readonly holder: string;
         balance: number;
         isActive: boolean;
         transaction: ITransaction[];
+        [key: string]: any;                         // 🔴🔴🔴 future property support with any data type 
     }
+
+    // interface like guard or contract too restrictive to object shape 
+    // you can actually maintain the required properties... 
+    // and if add any additional properties to be added at future 
+    // then creating it by a [key with a type of string] with a (value type of any)
+    // so now those existing will be required 
+    // but you can also add any additional property that you want to this object
 
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
     // 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
 
-    const tran1: ITransaction = {
-        sender: 101,
-        receiver: 202,
-        amount: 200,
-    }
-    const tran2: ITransaction = {
-        sender: 101,
-        receiver: 555,
-        amount: 100,
-    }
-    const tran3: ITransaction = {
-        sender: 101,
-        receiver: 600,
-        amount: 350,
-    }
-    const tran4: ITransaction = {
-        sender: 101,
-        receiver: 850,
-        amount: 450,
-    }
+    // const tran1: ITransaction = { ... }
+    // const tran2: ITransaction = { ... }
+    // const tran3: ITransaction = { ... }
+    // const tranN: ITransaction = { ... }
+
+    // const transactionList: ITransaction[] = [tran1, tran2, tran3, tranN, ...]
+
+    const transactionList: ITransaction[] = [
+        { sender: 101, receiver: 600, amount: 350 },
+        { sender: 101, receiver: 850, amount: 450 },
+        { sender: 101, receiver: 555, amount: 100 },
+        { sender: 101, receiver: 202, amount: 200 },
+        { sender: 101, receiver: 340, amount: 400 },
+    ];
 
     const account: IBankAccount = {
         id: 101,
         holder: 'Jon',
         balance: 50_000,
         isActive: true,
-        transaction: [tran1, tran2, tran3, tran4]
+        transaction: transactionList,
+        futurePropertySupportWith: 'anyDataType...',        // 🔴🔴🔴 future property support with any data type
     }
 
+    console.log(account);
+
+    
+    const totalTransactionAmount = (allTransaction: ITransaction[]): number => {
+        return allTransaction.reduce((total, obj) => total += obj.amount, 0);
+    }
+    const totalSend = totalTransactionAmount(transactionList);
+    console.log({ totalSend });
+
+
+    const currentBalance = (currentAmount: number, totalSend: number): number => {
+        return currentAmount - totalSend;
+    }
+    const availableBalance = currentBalance(account.balance, totalSend);
+    console.log({ availableBalance });
+
+
+    account.balance = availableBalance;
     console.log(account);
 
 })();
