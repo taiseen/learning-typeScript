@@ -1,3 +1,0 @@
-"use strict";
-// conditional-types
-// a type is dependent on another type...
