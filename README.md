@@ -1,5 +1,17 @@
 > 28 - April - 2023
 
+# TypeScript Learning
+
+```
+In this repo has 3 category TypeScript learning domain...
+
+1) Raw TypeScript                   ===> ./src/script/
+
+2) HTML, CSS + TypeScript project   ===> ./src/script/ts/nn/
+
+3) React with TypeScript            ===> ./src/
+```
+
 * yarn create vite --template react-ts PROJECT_NAME
 * yarn add -D tailwindcss postcss autoprefixer
 * npx tailwindcss init -p

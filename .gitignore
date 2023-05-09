@@ -1,4 +1,8 @@
 /src/script/js
+/src/script/ts/nn/public/assets/js/
+/src/script/ts/nn/public/assets/js/*.js
+*.js
+
 # Logs
 logs
 *.log
