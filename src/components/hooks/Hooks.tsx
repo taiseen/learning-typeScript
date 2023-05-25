@@ -1,4 +1,4 @@
-import { CounterReducer, State, StateUser } from ".."
+import { CounterReducer, RefDom, RefMutable, State, StateUser } from ".."
 
 
 const Hooks = () => {
@@ -11,6 +11,10 @@ const Hooks = () => {
             <StateUser />
 
             <CounterReducer />
+
+            <RefDom />
+
+            <RefMutable />
 
         </div>
     )

@@ -15,6 +15,9 @@ export { default as Button } from './event/Button';
 export { default as Input } from './event/Input';
 
 export { default as CounterReducer } from './hooks/CounterReducer';
+export { default as RefMutable } from './hooks/RefMutable';
 export { default as StateUser } from './hooks/StateUser';
+export { default as RefDom } from './hooks/RefDom';
 export { default as Hooks } from './hooks/Hooks';
 export { default as State } from './hooks/State';
+
